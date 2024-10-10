@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: #121212; /* Spotify black background */
+}
+p {
+    margin: 0px;
+    color: #FFFFFF; /* White text */
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+input[type="range"] {
+    accent-color: #1DB954; /* Spotify green for inputs */
+}
+
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+    column-gap: 20px;
+}
+
+.left-section {
+    background-color: #181818; /* Dark section background */
+    border-radius: 21px;
+    flex-grow: 1;
+    padding: 40px 30px 40px 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+/* song list */
+.item-container {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    padding: 6px;
+}
+
+.item-img {
+    flex-grow: 0;
+    display: flex;
+}
+
+.track-data-container {
+    flex-grow: 1;
+}
+
+.track-title {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF; /* White text */
+    line-height: 15.47px;
+    text-align: left;
+}
+
+.track-artist {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    color: #B3B3B3; /* Lighter gray for artist name */
+    line-height: 13.26px;
+    text-align: left;
+}
+
+.track-duration {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF; /* White text */
+    line-height: 15.47px;
+    text-align: left;
+}
+
+.track-year {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    color: #B3B3B3; /* Gray for additional details */
+    line-height: 13.26px;
+    text-align: left;
+}
+
+.player-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 21px;
+    background-color: #181818; /* Dark section background */
+    box-sizing: border-box;
+}
+
+.thumbnail-container {
+    height: 589px;
+    width: 601px;
+    border-radius: 21px;
+    background-color: #333333; /* Dark gray for thumbnails */
+}
+
+.track-details {
+    margin-top: 30px;
+    text-align: center;
+    row-gap: 5px;
+}
+
+#song-title, #song-artist {
+    color: #FFFFFF;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 111.5%;
+}
+
+#song-artist {
+    color: #B3B3B3; /* Gray for artist */
+    font-weight: 400;
+}
+
+#thumbnail {
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.track-progress {
+    position: relative;
+    width: 397px;
+    margin-bottom: 48px;
+}
+
+#progress {
+    position: absolute;
+    top: 16px;
+}
+
+.time {
+    color: #B3B3B3; /* Gray time details */
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 111.5%;
+    font-style: normal;
+}
+
+#time-left {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+button{
+    border:none;
+    border-radius: 30%;
+    background-color: #181818;
+}
+.control-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background-color: #1DB954; /* Spotify green for buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#play-pause {
+    margin: 0 50px;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.volume-range {
+    width: 310px !important;
+}
+
+.current-song {
+
+    background-color: #1DB954;
+}
+
+/* level 2 starts here */
+
+.btn-group > button {
+    display: flex;
+    cursor: pointer;
+}
+
+.nxt-prev-btn {
+    padding-top: 16px;
+}
+
+.player-bottom-control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: 188px;
+}
+
+.custom-dropdown-selected {
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 50px;
+    background-color: #1DB954; /* Green for dropdown */
+    color: #FFFFFF;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-dropdown-items {
+    background-color: #121212; /* Black for dropdown items */
+    position: absolute;
+    border-radius: 4px;
+    z-index: 1;
+    bottom: 62px;
+    width: 100%;
+    display: none;
+}
+
+.custom-dropdown-item {
+    cursor: pointer;
+    color: white;
+    background-color: #333333; /* Dark background for items */
+    font-family: Poppins;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.47px;
+    text-align: left;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #1DB954; /* Hover effect with green */
+}
+
+.selected-speeds {
+    color: #1DB954; /* Spotify green for selected items */
+}
+
+.list-thumbnail {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    padding: 0px 6px;
+}
+.pre-img{
+    padding-bottom: 20px;
+}
+
+.footer {
+    background-color: #181818; /* Dark footer background */
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF; /* White text */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.social-icon {
+    color: #B3B3B3; /* Default icon color */
+    font-size: 24px; /* Icon size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-icon:hover {
+    color: #1DB954; /* Change color on hover */
+}
+
+/* Optional: individual icon colors on hover */
+.social-icon.github:hover {
+    color: #4078c0; /* GitHub color */
+}
+
+.social-icon.instagram:hover {
+    color: #e1306c; /* Instagram color */
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5; /* LinkedIn color */
+}
+#Connect{
+    background-color: green;
+}
+span{
+    color:green;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .music-player {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section {
+        padding: 20px 15px;
+    }
+
+    .player-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .thumbnail-container {
+        height: 300px;
+        width: 100%;
+    }
+
+    .track-title {
+        font-size: 16px;
+    }
+
+    .track-artist,
+    .track-duration,
+    .track-year {
+        font-size: 12px;
+    }
+
+    .track-progress {
+        width: 100%;
+    }
+
+    .volume-range {
+        width: 100% !important;
+    }
+
+  
+
+    #play-pause {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-player{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    
+    .track-title {
+        font-size: 14px;
+    }
+
+    .track-artist,
+    .track-duration,
+    .track-year {
+        font-size: 10px;
+    }
+
+    .current-song {
+        font-size: 14px;
+    }
+
+   .btn-group{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+   }
+   button img{
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+   }
+   .custom-dropdown-container{
+    width: 120px;
+    padding: 1px;
+   
+   }
+   .left-section{
+    width: 100%;
+    margin-top: 20px;
+   }
+   .player-container{
+    width: 108%;
+   }
+}
